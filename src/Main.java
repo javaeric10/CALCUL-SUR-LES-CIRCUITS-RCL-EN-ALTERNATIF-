@@ -14,8 +14,9 @@ public class Main {
             double choix = scanner.nextDouble ();
             String valeurresist;
             if ( choix == 1 )// circuit serie
+
             // initalisation des valeurs
-            {
+            {System.out.println ( "circuit en serie" );
                 String valeurinduc;
                 String valeurcapa;
                 String valeurfreq;
@@ -48,37 +49,37 @@ public class Main {
                 System.out.println ( "LA VALEUR DE LA RESISTANCE " + resistance );
                 System.out.println ( "LA VALEUR DE LA FREQUENCE RESONANCE " + frequencerais );
             }
-           if(choix==2)//circuit en paralleme
-           {
+           else if (choix==2)//circuit en paralleme
+           {  System.out.println ( "circuit en parallele" );
                String valeurinduc;
                String valeurcapa;
                String valeurfreq;
                //entre des valeurs
                System.out.println ( "POUR LES VALEUR NON CONNUES TAPE 0" );
                valeurresist = ("RESISTANCE EN OHMS");
-               valeurinduc = ("INDUCTANCE EN HENRY");
+               valeurinduc = ("INDUCTANCE EN miliHENRY");
                valeurcapa = ("CAPACITE EN MICROFARAD");
                valeurfreq = ("FREQUENCE EN HERTZ");
                System.out.println ( "DONNE LA VALEUR DE LA " + valeurresist );
-               double resistance = scanner.nextDouble ();
+               double resistancep = scanner.nextDouble ();
                System.out.println ( "DONNE LA VALEUR DE L'" + valeurinduc );
-               double inductance = scanner.nextDouble ();
+               double inductancep = scanner.nextDouble ();
                System.out.println ( "DONNE LA VALEUR DE LA " + valeurcapa );
-               double capacite = scanner.nextDouble ();
+               double capacitep = scanner.nextDouble ();
                System.out.println ( "DONNE LA VALEUR DE LA " + valeurfreq );
-               double frequence = scanner.nextDouble ();
+               double frequencep = scanner.nextDouble ();
                // si circuit paralele
-               double rads = 2 * Math.PI * frequence;
-               double reactanceindu = rads * inductance;
-               double reactancecondo = 1 / (rads * capacite);
-               double inpedance = 1/(Math.sqrt ( (Math.pow ( (1/resistance), 2 ) + Math.pow ( ((1/reactanceindu) - reactancecondo), 2 )) ));
-               double frequencerais = 1 / ((2 * Math.PI) * Math.sqrt ( inductance * capacite ));
+               double rads = (2 * Math.PI) * frequencep;
+               double reactanceindup = rads * inductancep;
+               double reactancecondop = 1 / (rads * capacitep);
+               double inpedance = 1/(Math.sqrt ( (Math.pow ( (1/resistancep), 2 ) + Math.pow ( (((1/reactanceindup) - reactancecondop)), 2) )));
+               double frequencerais = 1 / ((2 * Math.PI) * Math.sqrt ( inductancep * capacitep ));
                //affichage resultat
                System.out.println ( "LA VALEUR DE L'RADIAN " + rads );
                System.out.println ( "LA VALEUR DE L'IMPEDANCE " + inpedance );
-               System.out.println ( "LA VALEUR DE LA REACTANCE DE L'INDUCTANCE " + reactanceindu );
-               System.out.println ( "LA VALEUR DE LA REACTANCE DE LA CAPACITE " + reactancecondo );
-               System.out.println ( "LA VALEUR DE LA RESISTANCE " + resistance );
+               System.out.println ( "LA VALEUR DE LA REACTANCE DE L'INDUCTANCE " + reactanceindup );
+               System.out.println ( "LA VALEUR DE LA REACTANCE DE LA CAPACITE " + reactancecondop );
+               System.out.println ( "LA VALEUR DE LA RESISTANCE " + resistancep );
                System.out.println ( "LA VALEUR DE LA FREQUENCE RESONANCE " + frequencerais );
 
         }
