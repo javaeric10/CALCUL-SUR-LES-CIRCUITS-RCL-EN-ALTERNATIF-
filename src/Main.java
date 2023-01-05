@@ -69,7 +69,7 @@ public class Main {
                System.out.println ( "DONNE LA VALEUR DE LA " + valeurfreq );
                double frequencep = scanner.nextDouble ();
                // si circuit paralele
-               double rads = (2 * Math.PI) * frequencep;
+               double rads =( 2 * Math.PI * frequencep)/10;
                double reactanceindup = rads * inductancep;
                double reactancecondop = 1 / (rads * capacitep);
                double inpedance = 1/(Math.sqrt ( (Math.pow ( (1/resistancep), 2 ) + Math.pow ( (((1/reactanceindup) - reactancecondop)), 2) )));
